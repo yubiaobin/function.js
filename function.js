@@ -24,8 +24,12 @@ console.log(result);    //  http://www.oc35.com/index.html?search=hello
 
  // 范围函数(本地模拟随机概率)
 function randomFrom(start,end){
-    var randomSize = end - start + 1;
-    return Math.floor(Math.random() * randomSize + start);
+	if(typeof start === "number" && typeof end === "number"){
+		var randomSize = end - start + 1;
+    	return Math.floor(Math.random() * randomSize + start);
+	} else {
+		return "All arguments must be numbers";
+	}
 }
 // example1
 var num = randomFrom(2,7);
