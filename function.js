@@ -42,6 +42,19 @@ window.onload = function(){console.log(document.write(color))}  // red, orange, 
 
 
 
+// 数组去掉重复项函数
+Array.prototype.removeRepeat = function(){
+	var n = [];     // 新建一个临时数组
+	for(var i = 0, j = this.length; i < j; i++ ){   // 遍历当前数组
+		if(n.indexOf(this[i]) === -1)n.push(this[i]);
+		//如果当前数组的第i已经保存进了临时数组，那么跳过，否则把当前项push到临时数组里面
+	}
+	return n;
+};
+// example
+var array = [1,1,2,2,3 ,"hello",'hello'];
+var result = array.removeRepeat();
+console.log(result);   // [1, 2, 3,"hello"]
 
 
 
