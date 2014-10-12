@@ -14,8 +14,82 @@ function addURLParam (url, name , value){
 	url += encodeURIComponent(name) + "=" + encodeURIComponent(value);
 	return url;
 }
-
 // example
 var url = "http://www.oc35.com/index.html";
 var result = addURLParam(url, "search" , "hello");
 console.log(result);    //  http://www.oc35.com/index.html?search=hello 
+
+
+
+
+
+
+
+
+
+
+ // 范围函数(本地模拟随机概率)
+function randomFrom(start,end){
+    var randomSize = end - start + 1;
+    return Math.floor(Math.random() * randomSize + start);
+}
+// example
+var num = randomFrom(2,7);
+window.onload = function(){console.log(document.write(num))}  //  2,3,4,5,6,7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
