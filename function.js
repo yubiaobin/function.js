@@ -8,6 +8,39 @@
 
 
 
+
+/*----------------- 原型方法部分 -----------------*/
+
+// 数组去掉重复项函数
+Array.prototype.removeRepeat = function(){
+	var n = [];     // 新建一个临时数组
+	for(var i = 0, j = this.length; i < j; i++ ){   // 遍历当前数组
+		if(n.indexOf(this[i]) === -1)n.push(this[i]);
+		//如果当前数组的第i已经保存进了临时数组，那么跳过，否则把当前项push到临时数组里面
+	}
+	return n;
+};
+// example
+var array = [1,1,2,2,3 ,"hello",'hello'];
+var result = array.removeRepeat();
+console.log(result);   // [1, 2, 3,"hello"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------------- 功能函数部分 -----------------*/
+
 // 向现有的URL的末尾添加字符串参数
 function addURLParam (url, name , value){
 	url += (url.indexOf("?") == -1 ? "?" : "&");
@@ -42,22 +75,20 @@ window.onload = function(){console.log(document.write(color))}  // red, orange, 
 
 
 
-// 数组去掉重复项函数
-Array.prototype.removeRepeat = function(){
-	var n = [];     // 新建一个临时数组
-	for(var i = 0, j = this.length; i < j; i++ ){   // 遍历当前数组
-		if(n.indexOf(this[i]) === -1)n.push(this[i]);
-		//如果当前数组的第i已经保存进了临时数组，那么跳过，否则把当前项push到临时数组里面
-	}
-	return n;
-};
+// 字符串首字母大写
+function charUpper(text){
+	var str = "";
+	var arr = text.split(" ");
+	for(var i = 0, len = arr.length; i < len; i++){
+		var up_str = arr[i].substring(0,1);
+		arr[i] = up_str.toUpperCase() + arr[i].substring(1);
+	};
+	str = arr.join(" ");
+	return str;
+}
 // example
-var array = [1,1,2,2,3 ,"hello",'hello'];
-var result = array.removeRepeat();
-console.log(result);   // [1, 2, 3,"hello"]
-
-
-
+var text = "aaa bbb ccc";
+console.log(charUpper(text));  //  Aaa Bbb Ccc
 
 
 
