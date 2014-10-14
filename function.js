@@ -76,19 +76,19 @@ window.onload = function(){console.log(document.write(color))}  // red, orange, 
 
 
 // 字符串首字母大写
-function charUpper(text){
+function charUpper(text, delimiter){
 	var str = "";
-	var arr = text.split(" ");
+	var arr = text.split(delimiter);
 	for(var i = 0, len = arr.length; i < len; i++){
 		var up_str = arr[i].substring(0,1);
 		arr[i] = up_str.toUpperCase() + arr[i].substring(1);
 	};
-	str = arr.join(" ");
+	str = arr.join(delimiter);
 	return str;
 }
 // example
 var text = "aaa bbb ccc";
-console.log(charUpper(text));  //  Aaa Bbb Ccc
+console.log(charUpper(text, " "));  //  Aaa Bbb Ccc
 
 
 
