@@ -49,7 +49,7 @@ function cloneFun(obj){
 	}
 	var result = (obj instanceof Array)?[]:{};   // 区别数组和对象
 	for(var i in obj){
-		result[i] = (typeof obj[i] !== "object")?obj[i]:cloneFun(obj[i]);
+		result[i] = (typeof obj[i] !== "object")?obj[i]:arguments.callee(obj[i]);
 	}
 	return result;   // 返回的新数组或对象
 }
