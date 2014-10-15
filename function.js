@@ -41,6 +41,31 @@ console.log(result);   // [1, 2, 3,"hello"]
 
 /*----------------- 功能函数部分 -----------------*/
 
+
+// 克隆一个对象或数组的函数
+function cloneFun(obj){
+	if(!obj || typeof obj !== "object"){   // 判断非数组或对象
+		return null;
+	}
+	var result = (obj instanceof Array)?[]:{};   // 区别数组和对象
+	for(var i in obj){
+		result[i] = (typeof obj[i] !== "object")?obj[i]:cloneFun(obj[i]);
+	}
+	return result;   // 返回的新数组或对象
+}
+// example
+var arr = [1,2,[3,4,5],6];
+var obj = {
+	name : "lilei",
+	age :12
+}
+var arr_result = cloneFun(arr);
+var obj_result = cloneFun(obj);
+console.log(arr_result);
+console.log(obj_result);
+
+
+
 // 向现有的URL的末尾添加字符串参数
 function addURLParam (url, name , value){
 	url += (url.indexOf("?") == -1 ? "?" : "&");
