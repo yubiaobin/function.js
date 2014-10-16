@@ -1,7 +1,7 @@
 常用的Javascript函数库
 ====================
 
-a useful javascript function library
+A daily common used function library
 
 
 ###### 谁没有梦想？但是又有多少人真正为了梦想去做点儿什么了？

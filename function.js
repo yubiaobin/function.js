@@ -41,7 +41,6 @@ console.log(result);   // [1, 2, 3,"hello"]
 
 /*----------------- 功能函数部分 -----------------*/
 
-
 // 克隆一个对象或数组的函数
 function cloneFun(obj){
 	if(!obj || typeof obj !== "object"){   // 判断非数组或对象
@@ -63,6 +62,7 @@ var arr_result = cloneFun(arr);
 var obj_result = cloneFun(obj);
 console.log(arr_result);
 console.log(obj_result);
+
 
 
 
