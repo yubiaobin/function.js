@@ -41,6 +41,34 @@ console.log(result);   // [1, 2, 3,"hello"]
 
 /*----------------- 功能函数部分 -----------------*/
 
+
+// 两个数字类型参数求差函数
+function subtractionNum(){
+	if(arguments.length === 2){
+		if(typeof arguments[0] === "number" && typeof arguments[1] === "number"){
+			return (arguments[0] < arguments[1]) ? arguments[1] - arguments[0] : arguments[0] - arguments[1];
+		} else {
+			console.log("传入的参数必须是数值类型");
+		}
+	} else {
+		console.log("请确认是否传入了两个参数");
+	}
+}
+// example
+var result1 = subtractionNum(20,10);
+var result2 = subtractionNum(20,50);
+var result3 = subtractionNum();
+var result4 = subtractionNum(20,30,50);
+var result5 = subtractionNum(20,"hello");
+console.log(result1);   // 10
+console.log(result2);   // 30
+console.log(result3);   // 请确认是否传入了两个参数 undefined
+console.log(result4);   // 请确认是否传入了两个参数 undefined
+console.log(result5);   // 传入的参数必须是数值类型 undefined
+
+
+
+
 // 克隆一个对象或数组的函数
 function cloneFun(obj){
 	if(!obj || typeof obj !== "object"){   // 判断非数组或对象
