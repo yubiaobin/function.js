@@ -143,9 +143,17 @@ function charUpper(text, delimiter){
 var text = "aaa bbb ccc";
 console.log(charUpper(text, " "));  //  Aaa Bbb Ccc
 
+	
 
-
-
+// 样式中线替换成驼峰写法
+function cssRemoveDelimiter(style){
+	if(style.indexOf("-") !== -1){
+		var doStyle = style.replace(/-\w/, function(str){
+			return str.substr(1).toUpperCase();
+		});
+	}
+	return doStyle;
+}
 
 
 
