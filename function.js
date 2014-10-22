@@ -145,7 +145,7 @@ console.log(charUpper(text, " "));  //  Aaa Bbb Ccc
 
 	
 
-// 样式中线替换成驼峰写法
+// 样式中线替换成驼峰写法个体
 function cssRemoveDelimiter(style){
 	if(style.indexOf("-") !== -1){
 		var doStyle = style.replace(/-\w/, function(str){
