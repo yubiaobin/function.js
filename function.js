@@ -151,11 +151,14 @@ function cssRemoveDelimiter(style){
 		var doStyle = style.replace(/-\w/, function(str){
 			return str.substr(1).toUpperCase();
 		});
+	} else {
+		doStyle = style;
 	}
 	return doStyle;
 }
-
-
+// example
+var result = cssRemoveDelimiter("background-color");
+console.log(result);    // backgroundColor 
 
 
 
