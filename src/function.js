@@ -85,7 +85,7 @@ var arr = [1,2,[3,4,5],6];
 var obj = {
 	name : "lilei",
 	age :12
-}
+};
 var arr_result = cloneFun(arr);
 var obj_result = cloneFun(obj);
 console.log(arr_result);
@@ -119,11 +119,11 @@ function randomFrom(start,end){
 }
 // example1
 var num = randomFrom(2,7);
-window.onload = function(){console.log(document.write(num))}  //  2,3,4,5,6,7
+window.onload = function(){console.log(document.write(num));};  //  2,3,4,5,6,7
 // example2
 var targetArray = ['red','orange','yellow','green','cyan','blue','violet','white'];
-var color = targetArray[randomFrom(0,targetArray.length-1)]
-window.onload = function(){console.log(document.write(color))}  // red, orange, yellow, green, cyan, blue, violet, white
+var color = targetArray[randomFrom(0,targetArray.length-1)];
+window.onload = function(){console.log(document.write(color));};  // red, orange, yellow, green, cyan, blue, violet, white
 
 
 
@@ -135,7 +135,7 @@ function charUpper(text, delimiter){
 	for(var i = 0, len = arr.length; i < len; i++){
 		var up_str = arr[i].substring(0,1);
 		arr[i] = up_str.toUpperCase() + arr[i].substring(1);
-	};
+	}
 	str = arr.join(delimiter);
 	return str;
 }
@@ -148,8 +148,9 @@ console.log(charUpper(text, " "));  //  Aaa Bbb Ccc
 
 // 样式中线替换成驼峰写法个体(去除中线)
 function cssRemoveDelimiter(style){
+	var doStyel;
 	if(style.indexOf("-") !== -1){
-		var doStyle = style.replace(/-\w/, function(str){
+		doStyle = style.replace(/-\w/, function(str){
 			return str.substr(1).toUpperCase();
 		});
 	} else {
