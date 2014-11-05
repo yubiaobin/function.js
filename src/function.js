@@ -28,6 +28,35 @@ console.log(result);   // [1, 2, 3,"hello"]
 
 
 
+//  数组的子集取余集函数
+function complement (arr1, arr2) {
+	//  声明结果数组和临时数组
+	var result = [], 
+		arrTotal = [].concat(arr1, arr2);
+	// 遍历临时数组并按条件处理
+	for (var i = 0, len = arrTotal.length; i < len; i++) {
+		if (!isEqual(i < arr1.length ? arr2 : arr1, arrTotal[i])) {
+			result.push(arrTotal[i]); 
+		}
+	}
+	return result;
+}
+//  数组取余集的比较函数
+function isEqual(arr, val) {
+	for (var i = 0; i < arr.length; i++) {
+		if(JSON.stringify(arr[i]) === JSON.stringify(val)) {
+			return true;    
+		}
+	}
+	return false;
+}
+var arr1 = [[1,"hahaha"], [3,4], 5, 6];
+var arr2 = [[1,"hahaha"], [3,4], 5, 6, 7, 8, 9, [10, 11],12];
+
+var result = complement(arr1, arr2);  // [7, 8, 9, [10, 11], 12];
+console.log(typeof result);           // object
+console.log(result instanceof Array); // true
+console.log(result.length);           // 5
 
 
 
