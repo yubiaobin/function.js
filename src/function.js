@@ -28,7 +28,7 @@ console.log(result);   // [1, 2, 3,"hello"]
 
 
 
-//  数组的子集取余集函数
+//  数组的子集取余集函数之一
 function complement (arr1, arr2) {
 	//  声明结果数组和临时数组
 	var result = [], 
@@ -50,6 +50,7 @@ function isEqual(arr, val) {
 	}
 	return false;
 }
+// example
 var arr1 = [[1,"hahaha"], [3,4], 5, 6];
 var arr2 = [[1,"hahaha"], [3,4], 5, 6, 7, 8, 9, [10, 11],12];
 
@@ -60,6 +61,50 @@ console.log(result instanceof Array); // true
 console.log(result.length);           // 5
 
 
+
+
+//  数组的子集取余集函数之二
+function getComplementArray(arr1, arr2) {
+	//重置数组
+	if (arr1.length < arr2.length) {
+		var newArrLengther = arr2,
+			newArrShorter = arr1;
+	} else {
+		var newArrLengther = arr1,
+			newArrShorter = arr2;
+	};
+	var repeatArr = [],
+		resultArr = [];
+	// 过滤出相同的数组
+	for (var i = 0; i < newArrLengther.length; i++) {
+		for (var j = 0; j < newArrShorter.length; j++) {
+			if (newArrLengther[i].toString() === newArrShorter[j].toString()) {
+				repeatArr.push(newArrShorter[j]);
+			};
+		};
+	};
+	// 长数组再拼接重复的数组项
+	var tmp = newArrLengther.concat(repeatArr);
+	// 临时保存数组项的对象
+	var o = {};
+	for (var k = 0; k < tmp.length; k++) {
+		(tmp[k] in o) ? o[tmp[k]]++ : o[tmp[k]] = true;
+	};
+	for (key in o) {
+		if (o[key] === true) {
+			resultArr.push(key);
+		};
+	};
+	return resultArr;
+};
+// example
+var arr1 = [[1,2], [3,4], [5, 6]];
+var arr2 = [[1,2], [3,4], [5, 6], [7, 8], [9, 10], [11,12]];
+var result = getComplementArray(arr1, arr2);
+console.log(result);   // [[7, 8], [9, 10], [11,12]];
+console.log(typeof result);           // object
+console.log(result instanceof Array); // true
+console.log(result.length);           // 5
 
 
 
