@@ -53,7 +53,6 @@ function isEqual(arr, val) {
 // example
 var arr1 = [[1,"hahaha"], [3,4], 5, 6];
 var arr2 = [[1,"hahaha"], [3,4], 5, 6, 7, 8, 9, [10, 11],12];
-
 var result = complement(arr1, arr2);
 console.log(result);                   // [7, 8, 9, [10, 11], 12];
 console.log(typeof result);           // object
