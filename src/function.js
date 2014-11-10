@@ -29,6 +29,12 @@ console.log(result);   // [1, 2, 3,"hello"]
 
 
 //  数组的子集取余集函数之一
+/*
+* @param{ Object | Array}
+*
+*
+*
+*/
 function complement (arr1, arr2) {
 	//  声明结果数组和临时数组
 	var result = [], 
