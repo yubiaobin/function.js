@@ -11,7 +11,11 @@
 
 /*----------------- 原型方法部分 -----------------*/
 
-// 数组去掉重复项函数
+
+/**
+ * [数组去掉重复项函数]
+ * @return {[type]}
+ */
 Array.prototype.removeRepeat = function(){
 	var n = [];     // 新建一个临时数组
 	for(var i = 0, j = this.length; i < j; i++ ){   // 遍历当前数组
@@ -28,13 +32,13 @@ console.log(result);   // [1, 2, 3,"hello"]
 
 
 
-//  数组的子集取余集函数之一
-/*
-* @param{ Object | Array}
-*
-*
-*
-*/
+
+/**
+ * [数组的子集取余集函数之一]
+ * @param  {[type]} arr1
+ * @param  {[type]} arr2
+ * @return {[type]}
+ */
 function complement (arr1, arr2) {
 	//  声明结果数组和临时数组
 	var result = [], 
@@ -47,7 +51,14 @@ function complement (arr1, arr2) {
 	}
 	return result;
 }
-//  数组取余集的比较函数
+
+
+/**
+ * [数组取余集的比较函数]
+ * @param  {[type]}  arr
+ * @param  {[type]}  val
+ * @return {Boolean}
+ */
 function isEqual(arr, val) {
 	for (var i = 0; i < arr.length; i++) {
 		if(JSON.stringify(arr[i]) === JSON.stringify(val)) {
@@ -68,7 +79,12 @@ console.log(result.length);           // 5
 
 
 
-//  数组的子集取余集函数之二
+/**
+ * [数组的子集取余集函数之二]
+ * @param  {[type]} arr1
+ * @param  {[type]} arr2
+ * @return {[type]}
+ */
 function getComplementArray(arr1, arr2) {
 	//重置数组
 	if (arr1.length < arr2.length) {
@@ -122,7 +138,10 @@ console.log(result.length);           // 5
 /*----------------- 功能函数部分 -----------------*/
 
 
-// 两个数字类型参数求差函数
+/**
+ * [两个数字类型参数求差函数]
+ * @return {[type]}
+ */
 function subtractionNum(){
 	if(arguments.length === 2){
 		if(typeof arguments[0] === "number" && typeof arguments[1] === "number"){
@@ -149,7 +168,11 @@ console.log(result5);   // 传入的参数必须是数值类型 undefined
 
 
 
-// 克隆一个对象或数组的函数
+/**
+ * [克隆一个对象或数组的函数]
+ * @param  {[type]} obj
+ * @return {[type]}
+ */
 function cloneFun(obj){
 	if(!obj || typeof obj !== "object"){   // 判断非数组或对象
 		return null;
@@ -174,7 +197,12 @@ console.log(obj_result);
 
 
 
-// 向现有的URL的末尾添加字符串参数
+/**
+ * [向现有的URL的末尾添加字符串参数]
+ * @param {[type]} url
+ * @param {[type]} name
+ * @param {[type]} value
+ */
 function addURLParam (url, name , value){
 	url += (url.indexOf("?") == -1 ? "?" : "&");
 	url += encodeURIComponent(name) + "=" + encodeURIComponent(value);
@@ -188,7 +216,12 @@ console.log(result);    //  http://www.oc35.com/index.html?search=hello
 
 
 
- // 范围函数(本地模拟随机概率)
+ /**
+  * [范围函数(本地模拟随机概率)]
+  * @param  {[type]} start
+  * @param  {[type]} end
+  * @return {[type]}
+  */
 function randomFrom(start,end){
 	if(typeof start === "number" && typeof end === "number"){
 		var randomSize = end - start + 1;
@@ -208,7 +241,12 @@ window.onload = function(){console.log(document.write(color));};  // red, orange
 
 
 
-// 字符串首字母大写
+/**
+ * [字符串首字母大写]
+ * @param  {[type]} text
+ * @param  {[type]} delimiter
+ * @return {[type]}
+ */
 function charUpper(text, delimiter){
 	var str = "";
 	var arr = text.split(delimiter);
@@ -226,7 +264,11 @@ console.log(charUpper(text, " "));  //  Aaa Bbb Ccc
 	
 
 
-// 样式中线替换成驼峰写法个体(去除中线)
+/**
+ * [样式中线替换成驼峰写法个体(去除中线)]
+ * @param  {[type]} style
+ * @return {[type]}
+ */
 function cssRemoveDelimiter(style){
 	var doStyel;
 	if(style.indexOf("-") !== -1){
