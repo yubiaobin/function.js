@@ -18,7 +18,7 @@
  */
 Array.prototype.removeRepeat = function(){
 	var n = [];     // 新建一个临时数组
-	for(var i = 0, j = this.length; i < j; i++ ){   // 遍历当前数组
+	for(var i = 0, j = this.length; i < j; i++ ){     // 遍历当前数组
 		if(n.indexOf(this[i]) === -1)n.push(this[i]);
 		//如果当前数组的第i已经保存进了临时数组，那么跳过，否则把当前项push到临时数组里面
 	}
@@ -40,7 +40,7 @@ console.log(result);   // [1, 2, 3,"hello"]
  * @return {[type]}
  */
 function complement (arr1, arr2) {
-	//  声明结果数组和临时数组
+	// 声明结果数组和临时数组
 	var result = [], 
 		arrTotal = [].concat(arr1, arr2);
 	// 遍历临时数组并按条件处理
@@ -74,7 +74,7 @@ function isEqual(arr, val) {
 var arr1 = [[1,"hahaha"], [3,4], 5, 6];
 var arr2 = [[1,"hahaha"], [3,4], 5, 6, 7, 8, 9, [10, 11],12];
 var result = complement(arr1, arr2);
-console.log(result);                   // [7, 8, 9, [10, 11], 12];
+console.log(result);                  // [7, 8, 9, [10, 11], 12];
 console.log(typeof result);           // object
 console.log(result instanceof Array); // true
 console.log(result.length);           // 5
@@ -125,7 +125,7 @@ function getComplementArray(arr1, arr2) {
 var arr1 = [[1,2], [3,4], [5, 6]];
 var arr2 = [[1,2], [3,4], [5, 6], [7, 8], [9, 10], [11,12]];
 var result = getComplementArray(arr1, arr2);
-console.log(result);   // [[7, 8], [9, 10], [11,12]];
+console.log(result);                  // [[7, 8], [9, 10], [11,12]];
 console.log(typeof result);           // object
 console.log(result instanceof Array); // true
 console.log(result.length);           // 5
@@ -214,7 +214,7 @@ function addURLParam (url, name , value){
 // example
 var url = "http://www.oc35.com/index.html";
 var result = addURLParam(url, "search" , "hello");
-console.log(result);    //  http://www.oc35.com/index.html?search=hello 
+console.log(result);    // http://www.oc35.com/index.html?search=hello 
 
 
 
@@ -262,7 +262,7 @@ function charUpper(text, delimiter){
 }
 // example
 var text = "aaa bbb ccc";
-console.log(charUpper(text, " "));  //  Aaa Bbb Ccc
+console.log(charUpper(text, " "));    // Aaa Bbb Ccc
 
 	
 
@@ -285,7 +285,7 @@ function cssRemoveDelimiter(style){
 }
 // example
 var result = cssRemoveDelimiter("background-color");
-console.log(result);    // backgroundColor 
+console.log(result);       // backgroundColor 
 
 
 
