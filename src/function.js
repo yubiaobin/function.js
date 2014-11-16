@@ -82,6 +82,7 @@ console.log(result.length);           // 5
 
 
 
+
 /**
  * [数组的子集取余集函数之二]
  * @param  {[type]} arr1
@@ -171,6 +172,7 @@ console.log(result5);   // 传入的参数必须是数值类型 undefined
 
 
 
+
 /**
  * [克隆一个对象或数组的函数]
  * @param  {[type]} obj
@@ -200,6 +202,7 @@ console.log(obj_result);
 
 
 
+
 /**
  * [向现有的URL的末尾添加字符串参数]
  * @param {[type]} url
@@ -215,6 +218,7 @@ function addURLParam (url, name , value){
 var url = "http://www.oc35.com/index.html";
 var result = addURLParam(url, "search" , "hello");
 console.log(result);    // http://www.oc35.com/index.html?search=hello 
+
 
 
 
@@ -244,6 +248,7 @@ window.onload = function(){console.log(document.write(color));};  // red, orange
 
 
 
+
 /**
  * [字符串首字母大写]
  * @param  {[type]} text
@@ -265,6 +270,7 @@ var text = "aaa bbb ccc";
 console.log(charUpper(text, " "));    // Aaa Bbb Ccc
 
 	
+
 
 
 /**
