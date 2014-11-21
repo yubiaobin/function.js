@@ -5,7 +5,7 @@
  */
 
 
-
+// 注释插件：DocBlockr。这个插件可以快速生成js ,php 等语言函数注释。在函数关键字function上面一行输入/** ,然后按tab 就会自动生成注释。
 
 
 
@@ -244,7 +244,6 @@ window.onload = function(){console.log(document.write(num));};  //  2,3,4,5,6,7
 var targetArray = ['red','orange','yellow','green','cyan','blue','violet','white'];
 var color = targetArray[randomFrom(0,targetArray.length-1)];
 window.onload = function(){console.log(document.write(color));};  // red, orange, yellow, green, cyan, blue, violet, white
-
 
 
 
