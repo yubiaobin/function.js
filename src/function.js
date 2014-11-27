@@ -33,6 +33,15 @@ console.log(result);   // [1, 2, 3,"hello"]
 
 
 
+
+
+
+
+
+
+
+
+
 /**
  * [数组的子集取余集函数之一]
  * @param  {[type]} arr1
@@ -269,6 +278,24 @@ var text = "aaa bbb ccc";
 console.log(charUpper(text, " "));    // Aaa Bbb Ccc
 
 	
+
+
+
+function removeRepeatCharacter(str){
+	var arr = [],
+		final_arr = [];
+	arr = str.split('')
+	for(var i = 0,len = arr.length; i < len; i++){
+		if(final_arr.indexOf(arr[i])  === -1){
+			final_arr.push(arr[i]);
+		}
+	}
+	return final_arr.join('');
+}
+
+var str = "123456564564654654abccabcbabcba645265465";
+var result = removeRepeatCharacter(str);
+console.log(result)    // 123456abc
 
 
 
