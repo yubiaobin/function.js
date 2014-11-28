@@ -280,7 +280,11 @@ console.log(charUpper(text, " "));    // Aaa Bbb Ccc
 	
 
 
-
+/**
+ * [去除字符串内重复的字符]
+ * @param  {[type]} str [description]
+ * @return {[type]}     [description]
+ */
 function removeRepeatCharacter(str){
 	var arr = [],
 		final_arr = [];
@@ -296,6 +300,7 @@ function removeRepeatCharacter(str){
 var str = "123456564564654654abccabcbabcba645265465";
 var result = removeRepeatCharacter(str);
 console.log(result)    // 123456abc
+
 
 
 
