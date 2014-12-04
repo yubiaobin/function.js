@@ -301,6 +301,29 @@ console.log(charUpper(text, " "));    // Aaa Bbb Ccc
 	
 
 
+
+/**
+ * [取数字的整除因子数组]
+ * @param  {[type]} num [description]
+ * @return {[type]}     [description]
+ */
+function getDivisorsArray(num){
+    var arr=[];
+    for(var i = 2;i <= parseInt(num/2); i++){
+        if(num % i === 0){
+            arr.push(i);
+        }
+    }
+    if(arr.length === 0){return num + " is prime"};
+    return arr;
+}
+// example
+console.log(getDivisorsArray(56));    // [2,4,7,8,14,28]
+
+
+
+
+
 /**
  * [去除字符串内重复的字符]
  * @param  {[type]} str [description]
