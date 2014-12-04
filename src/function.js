@@ -72,16 +72,16 @@ console.log('Hello World!'.reverse());   // !dlroW olleH
  * @return {[type]}        [description]
  */
 function createRandomArray(random, length){
-	var arr = [];
-	for(var i = 0; i < length - 1; i++){
+	var arr = [],
+		len = length - 1;
+	for(var i = 0; i < len; i++){
 		arr[i] = Math.floor(Math.random() * (random + 1));
 		arr.push(arr[i]);
 	}
 	return arr;
 }
 // example
-console.log(createRandomArray(15,20))
-
+console.log(createRandomArray(15,20));
 
 
 
