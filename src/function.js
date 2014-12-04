@@ -26,7 +26,7 @@
  * @return {[type]}
  */
 Array.prototype.removeRepeat = function(){
-	var n = [];     // 新建一个临时数组
+	var   n = [];     // 新建一个临时数组
 	for(var i = 0, j = this.length; i < j; i++ ){     // 遍历当前数组
 		if(n.indexOf(this[i]) === -1)n.push(this[i]);
 		//如果当前数组的第i已经保存进了临时数组，那么跳过，否则把当前项push到临时数组里面
@@ -72,8 +72,8 @@ console.log('Hello World!'.reverse());   // !dlroW olleH
  * @return {[type]}        [description]
  */
 function createRandomArray(random, length){
-	var arr = [],
-		len = length - 1;
+	var    arr = [],
+	       len = length - 1;
 	for(var i = 0; i < len; i++){
 		arr[i] = Math.floor(Math.random() * (random + 1));
 		arr.push(arr[i]);
@@ -100,7 +100,7 @@ function quickSort(arr){
 		return arr;
 	} else {
 		// 取数组中间项数
-		var pivotIndex = Math.floor(arr.length / 2),
+		var     pivotIndex = Math.floor(arr.length / 2),
 			// 取到剔除数组的中间改项数
 			pivot = arr.splice(pivotIndex, 1),
 			leftArray = [],
@@ -132,8 +132,8 @@ console.log(quickSort(arr));   // [1, 3, 4, 5, 5, 6, 6, 6, 37, 56, 92]
  */
 function complement (arr1, arr2) {
 	// 声明结果数组和临时数组
-	var result = [], 
-		arrTotal = [].concat(arr1, arr2);
+	var   result = [], 
+	      arrTotal = [].concat(arr1, arr2);
 	// 遍历临时数组并按条件处理
 	for (var i = 0, len = arrTotal.length; i < len; i++) {
 		if (!isEqual(i < arr1.length ? arr2 : arr1, arrTotal[i])) {
