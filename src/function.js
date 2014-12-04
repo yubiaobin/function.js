@@ -9,7 +9,16 @@
 
 
 
+
+
+
+
 /*----------------- 原型方法部分 -----------------*/
+
+
+
+// 数组原型方法扩展
+
 
 
 /**
@@ -31,12 +40,29 @@ console.log(result);   // [1, 2, 3,"hello"]
 
 
 
+// 字符串原型方法扩展
+
+
+
+/**
+ * [字符串倒叙输出方法]
+ * @return {[type]} [description]
+ */
+String.prototype.reverse = function(){
+	return Array.prototype.reverse.call(this.split("")).join("");
+};
+// example
+console.log('Hello World!'.reverse());   // !dlroW olleH
 
 
 
 
 
 
+
+
+
+/*----------------- 功能函数部分 -----------------*/
 
 
 
@@ -144,11 +170,6 @@ console.log(result.length);           // 5
 
 
 
-
-
-
-
-/*----------------- 功能函数部分 -----------------*/
 
 
 /**
@@ -329,9 +350,6 @@ console.log(result);       // backgroundColor
 
 
 
-
-
-
 /**
  * [杨辉三角求数组之一]
  * @param  {[type]} depth [description]
@@ -349,6 +367,7 @@ function pascal(depth) {
 }
 // example
 console.log(pascal(5));
+
 
 
 
