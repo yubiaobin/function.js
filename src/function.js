@@ -65,6 +65,27 @@ console.log('Hello World!'.reverse());   // !dlroW olleH
 /*----------------- 功能函数部分 -----------------*/
 
 
+/**
+ * [随机生成纯数字数组]
+ * @param  {[type]} random [description]
+ * @param  {[type]} length [description]
+ * @return {[type]}        [description]
+ */
+function createRandomArray(random, length){
+	var arr = [];
+	for(var i = 0; i < length - 1; i++){
+		arr[i] = Math.floor(Math.random() * (random + 1));
+		arr.push(arr[i]);
+	}
+	return arr;
+}
+// example
+console.log(createRandomArray(15,20))
+
+
+
+
+
 
 
 
@@ -309,6 +330,7 @@ window.onload = function(){console.log(document.write(num));};  //  2,3,4,5,6,7
 var targetArray = ['red','orange','yellow','green','cyan','blue','violet','white'];
 var color = targetArray[randomFrom(0,targetArray.length-1)];
 window.onload = function(){console.log(document.write(color));};  // red, orange, yellow, green, cyan, blue, violet, white
+
 
 
 
