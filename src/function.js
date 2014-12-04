@@ -69,6 +69,41 @@ console.log('Hello World!'.reverse());   // !dlroW olleH
 
 
 /**
+ * [数组的快速排序方法]
+ * @param  {[type]} arr [description]
+ * @return {[type]}     [description]
+ */
+function quickSort(arr){
+	// 如果数组只有一项，就返回原数组
+	if(arr.length <= 1){
+		return arr;
+	} else {
+		// 取数组中间项数
+		var pivotIndex = Math.floor(arr.length / 2),
+			// 取到剔除数组的中间改项数
+			pivot = arr.splice(pivotIndex, 1),
+			leftArray = [],
+			rightArray = [];
+		for(var i = 0, len = arr.length; i < len; i++){
+			// 如果该循环项小于“基准”项，放进左边数组，否则放进右边数组
+			if(arr[i] < pivot){
+				leftArray.push(arr[i]);
+			} else {
+				rightArray.push(arr[i]);
+			}
+		}
+		// 不断递归调用，然后把结果拼接成最后的结果数组
+		return arguments.callee(leftArray).concat(pivot, arguments.callee(rightArray));
+	}
+}
+// example
+var arr = [1,56,92,6,6,6,4,5,37,3,5];
+console.log(quickSort(arr));   // [1, 3, 4, 5, 5, 6, 6, 6, 37, 56, 92]
+
+
+
+
+/**
  * [数组的子集取余集函数之一]
  * @param  {[type]} arr1
  * @param  {[type]} arr2
