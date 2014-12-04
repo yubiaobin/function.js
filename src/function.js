@@ -332,7 +332,45 @@ console.log(result);       // backgroundColor
 
 
 
+/**
+ * [杨辉三角求数组之一]
+ * @param  {[type]} depth [description]
+ * @return {[type]}       [description]
+ */
+function pascal(depth) {
+    var arr = [[1]];
+    for(var i = 1; i < depth; i++){
+        arr[i] = [];
+        for(var j = 0; j <= i; j++){
+            arr[i][j] = (arr[i-1][j] || 0) + (arr[i-1][j-1] || 0);
+        }
+    }
+    return arr;
+}
+// example
+console.log(pascal(5));
 
+
+
+/**
+ * [杨辉三角求数组之二]
+ * @param  {[type]} depth [description]
+ * @return {[type]}       [description]
+ */
+function pascal2(depth) {
+    var arr = [[1]];
+    for (var i = 1; i < depth; i++) {
+        var temp = [];
+        var last = arr[arr.length - 1];
+        for (var j = 0; j <= last.length; j++){
+            (j === 0 || j === last.length) ? temp.push(1) : temp.push(last[j - 1] + last[j]);
+        }
+        arr.push(temp);
+    }
+    return arr;
+}
+// example
+console.log(pascal2(5));
 
 
 
