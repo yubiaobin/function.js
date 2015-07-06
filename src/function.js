@@ -501,7 +501,7 @@ console.log(pascal2(5));
 
 
 
-var AfterBuyObj = {
+var MaxIndexObj = {
     /*设置Cookie对象以及其方法*/
     Cookie : {
         read : function(name, key, isJSON) {
@@ -904,11 +904,11 @@ var AfterBuyObj = {
                         $(".badgeTitle").find("img").attr("src",user_info_pic);
                         $(".buyNum").html(buyNum);
 
-                        if(AfterBuyObj.weixinIsReady){
+                        if(MaxIndexObj.weixinIsReady){
                             //分享给朋友
                             wx.onMenuShareAppMessage({
-                                title  : '我在酷狗购买了李敏镐最新数字单曲《Thank You》，我的Minoz编号是' + AfterBuyObj.buyOrder,
-                                desc   : '我在酷狗购买了李敏镐最新数字单曲《Thank You》，我的Minoz编号是' + AfterBuyObj.buyOrder,
+                                title  : '我在酷狗购买了李敏镐最新数字单曲《Thank You》，我的Minoz编号是' + MaxIndexObj.buyOrder,
+                                desc   : '我在酷狗购买了李敏镐最新数字单曲《Thank You》，我的Minoz编号是' + MaxIndexObj.buyOrder,
                                 link   : 'http://huodong.kugou.com/2014/static/tpl/mobile_liminhao/index.html?is_go=0&hreffrom=16',
                                 imgUrl : 'http://huodong.kugou.com/2014/static/images/mobile_liminhao/wei_share_img.jpg',
                                 trigger: function (res) {
@@ -928,7 +928,7 @@ var AfterBuyObj = {
                             
                             //分享朋友圈
                             wx.onMenuShareTimeline({
-                                title  : '我在酷狗购买了李敏镐最新数字单曲《Thank You》，我的Minoz编号是' + AfterBuyObj.buyOrder,
+                                title  : '我在酷狗购买了李敏镐最新数字单曲《Thank You》，我的Minoz编号是' + MaxIndexObj.buyOrder,
                                 link   : 'http://huodong.kugou.com/2014/static/tpl/mobile_liminhao/index.html?is_go=0&hreffrom=16',
                                 imgUrl : 'http://huodong.kugou.com/2014/static/images/mobile_liminhao/wei_share_img.jpg',
                                 trigger: function (res) {
@@ -1032,7 +1032,7 @@ var AfterBuyObj = {
 
 
 /*首页初始化*/
-AfterBuyObj.init();
+MaxIndexObj.init();
 
 
 
