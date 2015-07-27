@@ -501,6 +501,55 @@ console.log(pascal2(5));
 
 
 
+/**
+ * 动态加载Script 
+ *
+ *
+ * 
+ */
+function loadScriptFun() {
+    var dc = document,
+        sc = dc.createElement('script'),
+        scriptLoaded = false;
+        sc.type = 'text/javascript';
+        sc.src = location.protocol + '//' + location.host + '/' + 'path/yourfile.js';
+         
+        // IE和opera支持onreadystatechange
+        // safari、chrome、opera支持onload
+        sc.onload = sc.onreadystatechange = function () {
+            // 避免opera下的多次调用
+            if(scriptLoaded){return;};
+            var readyState = sc.readyState;
+            if (!sc.readyState || (sc.readyState == "loaded" || sc.readyState == "complete")) {
+                scriptLoaded = true;
+                try {
+                    // callback();   执行你要执行的函数
+                } finally {
+                    sc.onload = sc.onreadystatechange = null;
+                    dc.getElementsByTagName('head')[0].removeChild(sc);
+                }
+            }
+        }
+        dc.getElementsByTagName('head')[0].appendChild(sc);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var MaxIndexObj = {
     /*设置Cookie对象以及其方法*/
     Cookie : {
