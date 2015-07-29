@@ -13,6 +13,133 @@
 
 
 
+/*定义模块组件*/
+;
+(function(root,factory){
+	/* CommonJS */
+	if (typeof exports == 'object') module.exports = factory();
+
+	/* AMD module */
+	else if (typeof define == 'function' && define.amd) define(factory);
+
+	/* Browser global */
+	else root.MaxDefineObj = factory();
+
+})(this,function(){
+
+	var MaxDefineObj = {
+		/*设置Cookie对象以及其方法*/
+		Cookie : {
+			read : function(name, key, isJSON) {
+		        var cookieValue = "";
+		        var arrStr = document.cookie.split("; ");
+		        for (var i = 0; i < arrStr.length; i++) {
+		            var temp = arrStr[i].match(/^(\w+)=(.+)$/);
+		            if (temp && temp.length > 1 && temp[1] == name) {
+		                cookieValue = temp[2];
+		                break;
+		            }
+		        }
+		        if (key) {
+					if(!isJSON)
+		                return new this.Param().parse(cookieValue)[key];
+					else
+						return JSON.parse(cookieValue)[key];
+		        }
+		        return cookieValue;
+		    },
+		    Param : function () {
+		        var o = {};
+		        this.parse = function(str) {
+		            var a = str.split("&");
+		            for (var i = 0,
+		            l = a.length; i < l; i++) {
+		                var k = a[i].split("=");
+		                o[k[0]] = k[1];
+		            }
+		            return o;
+		        };    	
+		    }
+		},
+		/*浏览器类型检测函数*/
+		uaTest  :  function(){
+			var me = this;
+
+			/*判断来自什么软件*/
+			if((/MicroMessenger/i).test(me.global_ua)){
+				/*如果是微信*/
+				me.from_software = 1;
+			} else {
+				/*非微信的浏览器*/
+				me.from_software = 2;
+			}
+			/*判断来自什么系统*/
+			if((/Android/i).test(me.global_ua)){
+				// 安卓
+				me.operate_system = 2;
+			} else if((/(iPhone|iPad|iPod|iOS)/i).test(me.global_ua)){
+				// ios拉取客户端
+				me.operate_system = 1;
+			} else {
+				me.operate_system = 3;
+			}
+		},
+		/*取url值得函数*/
+		GetQueryString  :  function(name) {  
+			var me = this;
+
+		    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");  
+		    var r = window.location.search.substr(1).match(reg);  //获取url中"?"符后的字符串并正则匹配
+		    var context = "";  
+		    if (r != null)  
+		        context = r[2];  
+		    reg = null;  
+		    r = null;  
+		    return context == null || context == "" || context == "undefined" ? "" : context;  
+		},
+		/**
+		 * [随机生成纯数字数组]
+		 * @param  {[type]} random [description]
+		 * @param  {[type]} length [description]
+		 * @return {[type]}        [description]
+		 */
+		createRandomArray  : function(randomNum, length){
+			var me = this;
+
+			var arr = [],len = length - 1;
+			for(var i = 0; i < len; i++){
+				arr[i] = Math.floor(Math.random() * (randomNum + 1));
+				arr.push(arr[i]);
+			}
+			return arr;
+		},
+		/*调用开始提示*/
+		alarm   : function(){
+			var me = this;
+			alert('开始模块调用');
+		},
+		/*初始化，程序入口*/
+		init  : function(){
+			var me = this;
+
+			me.alarm();
+		}
+		
+	}
+	return MaxDefineObj;
+});
+
+
+
+
+
+
+/*调用模块函数*/
+MaxDefineObj.init();
+
+
+
+
 /*----------------- 原型方法部分 -----------------*/
 
 
@@ -68,23 +195,7 @@ console.log('Hello World!'.reverse());   // !dlroW olleH
 /*----------------- 功能函数部分 -----------------*/
 
 
-/**
- * [随机生成纯数字数组]
- * @param  {[type]} random [description]
- * @param  {[type]} length [description]
- * @return {[type]}        [description]
- */
-function createRandomArray(random, length){
-	var    arr = [],
-	       len = length - 1;
-	for(var i = 0; i < len; i++){
-		arr[i] = Math.floor(Math.random() * (random + 1));
-		arr.push(arr[i]);
-	}
-	return arr;
-}
-// example
-console.log(createRandomArray(15,20));
+
 
 
 
@@ -332,7 +443,10 @@ window.onload = function(){console.log(document.write(num));};  //  2,3,4,5,6,7
 // example2
 var targetArray = ['red','orange','yellow','green','cyan','blue','violet','white'];
 var color = targetArray[randomFrom(0,targetArray.length-1)];
-window.onload = function(){console.log(document.write(color));};  // red, orange, yellow, green, cyan, blue, violet, white
+window.onload = function(){
+	console.log(document.write(color + 'ggg'));
+	document.body.style.backgroundColor = color;
+};  // red, orange, yellow, green, cyan, blue, violet, white
 
 
 
