@@ -398,13 +398,9 @@
 	    }
 	    dc.getElementsByTagName('head')[0].appendChild(sc);
 	};
-
-
 	var alarm = function(){
 		alert('现在开始调试脚本')
-	}
-
-
+	};
 	var init = function(){
 		var targetArray = ['red','orange','yellow','green','cyan','blue','violet','white'],
 			color = targetArray[randomFrom(0,targetArray.length-1)];
@@ -413,8 +409,7 @@
 
 		alarm();
 
-	}
-
+	};
 	/*返回可调用函数方法（暴露部分对外函数）*/
 	return {
 		init    :    init,
