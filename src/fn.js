@@ -25,7 +25,7 @@
 		define(factory);
 	} else {
 		/* Browser global */
-    	root.MaxDefine = factory();
+   		root.MaxDefine = factory();
 	}
 
 })(this,function(){
