@@ -14,8 +14,7 @@
 
 
 /*定义模块组件*/
-;
-(function(root,factory){
+;(function(root,factory){
 	
 	if (typeof exports == 'object'){
 		/* CommonJS */
