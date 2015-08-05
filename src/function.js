@@ -547,6 +547,32 @@ function loadScriptFun() {
 
 
 
+/**
+ * 判断是PC还是手机浏览器 
+ *
+ *
+ * 
+ */
+function isPlatform(){
+	//平台、设备和操作系统 
+	var np = navigator.platform,
+		system = { 
+            win: false, 
+            mac: false
+        }; 
+    system.win = np.indexOf("Win") == 0; 
+    system.mac = np.indexOf("Mac") == 0; 
+
+    if (system.win || system.mac) { 
+		/*判断为PC浏览器打开*/
+		// isPcWeb = true;   全局变量
+    } else { 
+		/*判断为手机浏览器打开*/
+		// isMobileWeb = true;   全局变量
+    } 
+}
+isPlatform();
+
 
 
 
