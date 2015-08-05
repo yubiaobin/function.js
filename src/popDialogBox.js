@@ -220,6 +220,7 @@
 		popCenter.style.position = 'relative';
 		popCenter.style.width = '70%';
 		popCenter.style.maxHeight = '40%';
+		popCenter.style.minHeight = '20%';
 		popCenter.style.marginLeft = '15%';
 		popCenter.style.background = '#fff';
 		popCenter.style.borderRadius = '5px';
