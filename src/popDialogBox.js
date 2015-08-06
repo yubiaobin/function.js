@@ -281,16 +281,16 @@
 
 		if( typeof options.btnCallback == 'function'){
 			confirmBtn.addEventListener('click', function(){
-				var removeBg = document.getElementById('PopBg'),
-					removeBox = document.getElementById('PopBox');
-				document.body.removeChild(removeBg);
-				document.body.removeChild(removeBox);
+				document.body.removeChild(document.getElementById('PopBg'));
+				document.body.removeChild(document.getElementById('PopBox'));
 
-				/*执行回调函数*/
-				options.btnCallback();
+				/*异步执行回调函数*/
+				setTimeout(function(){
+					options.btnCallback();
+				},10)
 			}, false)
 		}
-
+		
 	}
 
  	return popDialogShow;
