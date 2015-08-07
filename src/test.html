@@ -9,15 +9,34 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="format-detection" content="telephone=no">
 <meta name="format-detection" content="email=no">
+<style type="text/css">
+	
+#clickPop{
+	width:50%;
+	height:50px;
+	margin:50px 25%;
+	background:#ddff34;
+	text-align:center;
+	color:red;
+	font-size:20px;
+	box-shadow:5px 3px 10px #333;
+}
 
 
+</style>
+</head>
+<body>
 
 
 
 
 <p>test</p>
 
+<div id="wrapper">
+	
+	<button id="clickPop">点我</button>
 
+</div>
 
 
 
@@ -25,12 +44,30 @@
 
 
 <script src="fn.js"></script>
+<script type="text/javascript" src="popDialogBox.js"></script>
 <script type="text/javascript">
 
 window.onload = function(){
 
 	/*调用模块函数*/
 	MaxDefine.init();  
+
+	var button = document.getElementById('clickPop');
+
+	button.addEventListener('click', function(){
+		popDialogShow({
+			title        : '我是标题',
+			dialogStyle  :  1,
+			dialogBox    :  '<h3>填写资料</h3><input type="text" class="charge_input_get_prize" placeholder="姓名" id="charge_input_name"><div class="get_exp_prize_name_box"></div><p>jdclksdj</p><p>jdclksdj</p><p>jdclksdj</p><p>jdclksdj</p><p>jdclksdj</p><p>jdclksdj</p><p>jdclksdj</p><p>jdclksdj</p><p>jdclksdj</p><p>jdclksdj</p><p>jdclksdj</p><p>jdclksdj</p><p>jdclksdj</p><p>jdclksdj</p><p>jdclksdj</p><p>jdclksdj</p><p>jdclksdj</p>',
+			buttonNum    :  ['取消','确认','sdkljd'],
+			btnCallback  :  function gogo(){
+				alert('我是回调函数，请执行我！')
+			}
+		})
+	}, false);
+
+
+
 }
 
 </script>
