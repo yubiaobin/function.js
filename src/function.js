@@ -89,7 +89,7 @@ console.log(createRandomArray(15,20));
 
 
 /**
- * [数组随机洗牌算法]
+ * [数组随机洗牌算法1]
  * @param  {[type]} random [description]
  * @param  {[type]} length [description]
  * @return {[type]}        [description]
@@ -109,6 +109,23 @@ function shuffle(originalArray){
 console.log(shuffle([{'aaa' : '1'},['2',3],'34',13865432789,'我是一个好人',[1,2,3]]));
 
 
+/**
+ * [数组随机洗牌算法2]
+ * @param  {[type]} random [description]
+ * @param  {[type]} length [description]
+ * @return {[type]}        [description]
+ */
+function shuffle2(originalArray){
+	for(var i = 0, len = originalArray.length; i < len; i++){
+		var randomIndex = parseInt(Math.random() * len);
+		var temp = originalArray[randomIndex];
+		originalArray[randomIndex] = originalArray[i];
+		originalArray[i] = temp;
+	}
+	return originalArray
+}
+// example
+console.log(shuffle([{'aaa' : '1'},['2',3],'34',13865432789,'我是一个好人',[1,2,3]]));
 
 
 
