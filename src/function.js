@@ -88,6 +88,27 @@ console.log(createRandomArray(15,20));
 
 
 
+/**
+ * [数组随机洗牌算法]
+ * @param  {[type]} random [description]
+ * @param  {[type]} length [description]
+ * @return {[type]}        [description]
+ */
+function shuffle(originalArray){
+	var newArray = [];
+	while(originalArray.length > 0){
+		// 在原数组中随机挑选一个随机项
+		var randomIndex = parseInt(Math.random() * originalArray.length);
+		//  把随机挑选的项插入新数组, 同时在原有数组中删除这个随机的项
+		newArray.push(originalArray[randomIndex]);
+		originalArray.splice(randomIndex, 1);
+	}
+	return newArray;
+}
+// example
+console.log(shuffle([{'aaa' : '1'},['2',3],'34',13865432789,'我是一个好人',[1,2,3]]));
+
+
 
 
 
