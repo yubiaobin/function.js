@@ -14,43 +14,17 @@ A daily common used function library
 
 
 
-
-
-
-
-
-
-
-
-
-
 ### 关于作者
 
 
-- 前端码农
-- 大龄青年
-- 已婚未育
-- 闲的蛋疼
+- 前端方案解决师
 
 
 
 ### 反馈与建议
 
 - QQ ：[14203405](http://im.qq.com/)
-- 邮箱：<yubiaobin1986@gmail.com>
-
-
-
-
-### 简历
-
-- 在线简历地址 ：[我的简历](http://www.oc35.com/resume.html)
-
-
-
-### 好玩的
-
-- 魔方小游戏 ：[小魔方](http://www.oc35.com/rubik.html)
+- 邮箱：<biaobin_yu@foxmail.com
 
 
 
