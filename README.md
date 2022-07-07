@@ -24,7 +24,7 @@ A daily common used function library
 ### 反馈与建议
 
 - QQ ：[14203405](http://im.qq.com/)
-- 邮箱：<biaobin_yu@foxmail.com
+- 邮箱：<biaobin_yu@foxmail.com>
 
 
 
